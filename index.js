@@ -33,10 +33,10 @@ const exampleMovies = require("./movies");
 function getAllMovieTitles(movies) {
   // Error if there are no movies in the array
   if (movies.length === 0) {
-    throw "There are no movies available"
-  }
-  return movies.map((movie) => movie.title)
-}
+    throw "There are no movies available";
+  };
+  return movies.map((movie) => movie.title);
+};
 
 /**
  * checkIfAnyMovieHasRating()
@@ -58,10 +58,10 @@ function getAllMovieTitles(movies) {
  */
 function checkIfAnyMovieHasRating(movies, rating = "G") {
   if (movies.length === 0) {
-    throw "There are no movies available"
-  }
-  return movies.some((movie) => movie.rated === rating)
-}
+    throw "There are no movies available";
+  };
+  return movies.some((movie) => movie.rated === rating);
+};
 
 /**
  * findById()
@@ -79,7 +79,12 @@ function checkIfAnyMovieHasRating(movies, rating = "G") {
       // Toy Story 4
     };
  */
-function findById() {}
+function findById(movies, id) {
+  if (movies.length === 0) {
+    throw "There are no movies available";
+  };
+  return movies.find((movie) => movie.imdbID === id) || null
+}
 
 /**
  * filterByGenre()
