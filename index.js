@@ -171,7 +171,15 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
       { "James and the Giant Peach": "91%" },
     ];
  */
-function getRottenTomatoesScoreByMovie() {}
+function getRottenTomatoesScoreByMovie(movies) {
+  if (movies.length === 0) {
+    throw "There are no movies available";
+  };
+
+  return movies.map((movie) => {
+    return {[movie.title] : movie.ratings.find((rating) => rating.source.toLowerCase() === "rotten tomatoes").value}
+  })
+}
 
 // Do not change anything below this line.
 module.exports = {
